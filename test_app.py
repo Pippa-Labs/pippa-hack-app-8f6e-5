@@ -175,13 +175,13 @@ def test_the_three_nearest_sunny_towns_nearest_first():
     assert data["nearest_sunny_hours"] == 2.0
     assert data["nearest_temperature_c"] == 10.0
     assert "by train from London" in data["places"][0]
-    assert result.narrative.startswith("Nearest sunshine to London, in the next few hours (14:00–16:00)")
+    assert result.narrative.startswith("Nearest sunshine to London in the next few hours: Brighton (76 km, about 55 min by train, sunny from about 14:00 to 16:00")
 
 
 def test_the_window_stops_at_sunset_and_partial_hours_count_partly():
     now = NOW.replace(minute=30)
     result, _ = ask({}, sun={"Brighton": hours(14, 15)}, now=now)
-    assert result.data["window"] == "in the next few hours (14:30–16:00)"
+    assert result.data["window"] == "in the next few hours, daylight hours 14:30 to 16:00"
     assert result.data["nearest_sunny_hours"] == 1.5
 
 
@@ -189,7 +189,7 @@ def test_a_named_town_that_will_be_sunny():
     result, _ = ask({"place": "Brighton", "when": "this afternoon"}, sun={"Brighton": hours(12, 15)})
     assert result.data["asked_place"] == "Brighton"
     assert result.data["asked_place_sunny"] is True
-    assert result.narrative.startswith("Yes, Brighton should be sunny this afternoon (14:00–16:00)")
+    assert result.narrative.startswith("Yes, Brighton should be sunny this afternoon, from about 14:00 to 16:00")
 
 
 def test_a_named_town_that_will_be_cloudy_gets_alternatives():
@@ -226,7 +226,7 @@ def test_nowhere_sunny_is_said_plainly():
 def test_after_dark_it_looks_at_tomorrow_morning():
     evening = NOW.replace(hour=19)
     result, _ = ask({}, sun={"Brighton": hours(8, 10, day=1)}, now=evening)
-    assert result.data["window"] == "tomorrow morning (07:30–12:30)"
+    assert result.data["window"] == "tomorrow morning, daylight hours 07:30 to 12:30"
     assert result.data["nearest_place"] == "Brighton"
     assert result.narrative.startswith("The sun has set, so this is for tomorrow morning, from 07:30.")
 
@@ -235,7 +235,7 @@ def test_british_summer_time_is_handled():
     summer = datetime(2026, 7, 15, 9, 0, tzinfo=timezone.utc)   # 10:00 BST
     result, _ = ask({}, sun={"Brighton": hours(10, 12)}, now=summer, start=date(2026, 7, 15),
                     sunrise=(5, 0), sunset=(21, 0))
-    assert result.data["window"] == "in the next few hours (10:00–15:00)"
+    assert result.data["window"] == "in the next few hours, daylight hours 10:00 to 15:00"
     assert result.data["nearest_sunny_hours"] == 3.0
 
 
@@ -341,28 +341,28 @@ def test_the_real_fetch_sends_a_user_agent_and_a_timeout(monkeypatch):
 
 
 @pytest.mark.parametrize("when, now_hour, window, note", [
-    ("", 14, "in the next few hours (14:00–16:00)", ""),
-    ("today", 14, "in the next few hours (14:00–16:00)", ""),
-    ("now", 14, "in the next few hours (14:00–16:00)", ""),
-    ("the next few hours", 14, "in the next few hours (14:00–16:00)", ""),
-    ("this morning", 10, "this morning (10:00–12:00)", ""),
-    ("this morning", 14, "in the next few hours (14:00–16:00)",
+    ("", 14, "in the next few hours, daylight hours 14:00 to 16:00", ""),
+    ("today", 14, "in the next few hours, daylight hours 14:00 to 16:00", ""),
+    ("now", 14, "in the next few hours, daylight hours 14:00 to 16:00", ""),
+    ("the next few hours", 14, "in the next few hours, daylight hours 14:00 to 16:00", ""),
+    ("this morning", 10, "this morning, daylight hours 10:00 to 12:00", ""),
+    ("this morning", 14, "in the next few hours, daylight hours 14:00 to 16:00",
      "This morning is over, so this is for the next few hours, from 14:00."),
-    ("this evening", 14, "before sunset (14:00–16:00)",
+    ("this evening", 14, "before sunset, daylight hours 14:00 to 16:00",
      "There's no daylight this evening (sunset is 16:00), so this is for the last of the daylight, from 14:00."),
-    ("this evening", 5, "before sunset (13:00–16:00)",
+    ("this evening", 5, "before sunset, daylight hours 13:00 to 16:00",
      "There's no daylight this evening (sunset is 16:00), so this is for the last of the daylight, from 13:00."),
-    ("tomorrow", 14, "tomorrow (07:30–16:00)", ""),
-    ("tomorrow afternoon", 14, "tomorrow afternoon (12:00–16:00)", ""),
-    ("friday afternoon", 13, "this afternoon (13:00–16:00)", ""),          # today is a Friday
-    ("saturday morning", 13, "tomorrow morning (07:30–12:00)", ""),
-    ("sunday", 13, "in the next few hours (13:00–16:00)",
+    ("tomorrow", 14, "tomorrow, daylight hours 07:30 to 16:00", ""),
+    ("tomorrow afternoon", 14, "tomorrow afternoon, daylight hours 12:00 to 16:00", ""),
+    ("friday afternoon", 13, "this afternoon, daylight hours 13:00 to 16:00", ""),          # today is a Friday
+    ("saturday morning", 13, "tomorrow morning, daylight hours 07:30 to 12:00", ""),
+    ("sunday", 13, "in the next few hours, daylight hours 13:00 to 16:00",
      "I can only see as far as tomorrow, so this is for the next few hours."),
-    ("this weekend", 13, "tomorrow (07:30–16:00)", ""),                     # Friday: the weekend is tomorrow
-    ("next week", 13, "in the next few hours (13:00–16:00)",
+    ("this weekend", 13, "tomorrow, daylight hours 07:30 to 16:00", ""),                     # Friday: the weekend is tomorrow
+    ("next week", 13, "in the next few hours, daylight hours 13:00 to 16:00",
      "I can only see as far as tomorrow, so this is for the next few hours."),
-    ("", 6, "this morning (07:30–12:30)", "It's still dark, so this is for this morning, from 07:30."),
-    ("", 3, "this morning (07:30–12:30)", "It's still dark, so this is for this morning, from 07:30."),
+    ("", 6, "this morning, daylight hours 07:30 to 12:30", "It's still dark, so this is for this morning, from 07:30."),
+    ("", 3, "this morning, daylight hours 07:30 to 12:30", "It's still dark, so this is for this morning, from 07:30."),
 ])
 def test_which_hours(when, now_hour, window, note):
     now = NOW.replace(hour=now_hour)
@@ -377,7 +377,7 @@ def test_which_hours(when, now_hour, window, note):
 def test_ten_minutes_before_sunset_it_looks_at_tomorrow_morning():
     now = NOW.replace(hour=15, minute=50)
     result, _ = ask({}, sun={"Brighton": hours(9, 11, day=1)}, now=now)
-    assert result.data["window"] == "tomorrow morning (07:30–12:30)"
+    assert result.data["window"] == "tomorrow morning, daylight hours 07:30 to 12:30"
     assert result.narrative.startswith("The sun sets at 16:00, so this is for tomorrow morning, from 07:30.")
 
 
@@ -422,14 +422,14 @@ def test_a_connection_dropped_mid_answer_is_unavailable_not_a_crash():
 
 def test_twenty_five_minutes_before_sunset_a_sunny_town_still_counts():
     result, _ = ask({}, sun={"Brighton": hours(15, 15)}, now=NOW.replace(hour=15, minute=35))
-    assert result.data["window"] == "in the next few hours (15:35–16:00)"
+    assert result.data["window"] == "in the next few hours, daylight hours 15:35 to 16:00"
     assert result.data["nearest_place"] == "Brighton"
 
 
 def test_best_hours_are_one_unbroken_run():
     sun = {"Brighton": {**hours(12, 12), **hours(14, 15)}}
     result, _ = ask({"when": "this afternoon"}, sun=sun, now=NOW.replace(hour=12))
-    assert "(best 14:00–16:00)" in result.data["places"][0]
+    assert "sunny from about 14:00 to 16:00" in result.data["places"][0]
 
 
 def test_missing_sunshine_figures_are_not_called_cloud():
@@ -453,7 +453,7 @@ def test_sunrise_and_sunset_stay_paired_when_one_is_missing():
         return body
 
     result, _ = ask({}, fetch=holes, now=NOW.replace(hour=19))
-    assert result.data["window"].startswith("tomorrow morning (07:30")
+    assert result.data["window"].startswith("tomorrow morning, daylight hours 07:30")
 
 
 def test_impossible_sunrise_times_are_not_believed():
@@ -515,3 +515,11 @@ def test_one_paragraph_cuts_long_text_at_a_word():
     text = app_module.one_paragraph(["word " * 200, app_module.SOURCE_NOTE])
     assert len(text) <= 500 and text.endswith("…")
     assert app_module.one_paragraph([]) != ""
+
+
+def test_the_sunny_window_is_said_plainly_never_as_bare_times_next_to_trains():
+    result, _ = ask({}, sun={"Brighton": hours(14, 15)}, now=NOW.replace(minute=39))
+    assert "sunny from about 14:40 to 16:00" in result.narrative
+    assert "sunny from about 14:40 to 16:00" in result.data["places"][0]
+    assert result.data["window"] == "in the next few hours, daylight hours 14:39 to 16:00"
+    assert "(14:39" not in result.narrative and "–" not in result.narrative

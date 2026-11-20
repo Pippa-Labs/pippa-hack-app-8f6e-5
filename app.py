@@ -631,21 +631,22 @@ class App:
                 bits.append("where you are")
             else:
                 bits.append(f"{row['km']:.0f} km ({row['km'] / KM_PER_MILE:.0f} miles), {row['travel']}")
-        sun = f"{_hours(row['sun_hours'])} of sun"
-        if row["best"]:
-            a, b = row["best"]
-            sun += f" (best {_clock(datetime.fromtimestamp(a, UK))}–{_clock(datetime.fromtimestamp(b, UK))})"
-        bits.append(sun)
+        span = _sunny_span(row)
+        bits.append(f"{span}, {_hours(row['sun_hours'])} of sun in all" if span
+                    else f"{_hours(row['sun_hours'])} of sun")
         if row["temp"] is not None:
             bits.append(f"up to {round(row['temp']):.0f}°C")
         return ", ".join(bits[:1]) + ": " + ", ".join(bits[1:]) if len(bits) > 1 else bits[0]
 
     def _answer(self, start, asked, asked_row, window, top, sunny, rows, needed) -> Result:
-        window_text = f"{window.label} ({_clock(window.start)}–{_clock(window.end)})"
+        # The clock times are the DAYLIGHT looked at, and are said so: next to
+        # train times, a bare "(07:30–16:03)" read as when the trains run.
+        window_field = f"{window.label}, daylight hours {_clock(window.start)} to {_clock(window.end)}"
+        window_text = window.label
         places = [self._describe(r) for r in top]
         data = {
             "start": start["name"],
-            "window": window_text,
+            "window": window_field,
             "places": places,
             "sunny_places_found": len(sunny),
             "live_weather": True,
@@ -674,13 +675,17 @@ class App:
             data["asked_place_sunny"] = bool(asked_row["sunny"])
             data["asked_place_forecast"] = self._describe(asked_row, include_distance=False)
             detail = self._describe(asked_row, include_distance=False).split(": ", 1)[-1]
+            span = _sunny_span(asked_row)
+            temp = f", up to {round(asked_row['temp']):.0f}°C" if asked_row["temp"] is not None else ""
             if asked_row["sunny"]:
-                line = f"Yes, {asked_row['name']} should be sunny {window_text}: {detail}"
+                when_sunny = span.replace("sunny ", "", 1) if span else f"with {_hours(asked_row['sun_hours'])} of sun"
+                line = f"Yes, {asked_row['name']} should be sunny {window_text}, {when_sunny}{temp}"
                 if asked_row["km"] >= 1:
                     line += f"; {asked_row['km']:.0f} km from {start['name']}, {_short_travel(asked_row)}"
                 parts.append(line + ".")
             elif asked_row["sun_hours"] > 0:
-                parts.append(f"Not really: {window_text}, {asked_row['name']} gets only {detail}.")
+                parts.append(f"Not really: {asked_row['name']} gets only {_hours(asked_row['sun_hours'])} "
+                             f"of sun {window_text}{temp}.")
             else:
                 parts.append(f"No, {asked_row['name']} looks cloudy {window_text}"
                              + (f", up to {round(asked_row['temp']):.0f}°C." if asked_row["temp"] is not None else "."))
@@ -690,7 +695,7 @@ class App:
             if asked_row is not None and not asked_row["sunny"] and not asked_row.get("skip"):
                 lead = "For sun instead, the nearest"
             listing = "; ".join(_short_place(r) for r in top)
-            parts.append(f"{lead} to {start['name']}, {window_text}: {listing}.")
+            parts.append(f"{lead} to {start['name']} {window_text}: {listing}.")
         else:
             brightest = max((r for r in rows if not r["unknown"]), key=lambda r: (r["sun_hours"], -r["km"]),
                             default={"sun_hours": 0})
@@ -745,6 +750,20 @@ def one_paragraph(parts: list[str], limit: int = NARRATIVE_MAX) -> str:
     return text or "Nearest Sunshine has no answer for that just now."
 
 
+def _about(stamp: float) -> str:
+    """A clock time rounded to the nearest 5 minutes: 14:39 -> 14:40."""
+    moment = datetime.fromtimestamp(round(stamp / 300) * 300, UK)
+    return _clock(moment)
+
+
+def _sunny_span(row: dict) -> str | None:
+    """'sunny from about 10:00 to 15:00', from the longest run of mostly sunny hours."""
+    if not row.get("best"):
+        return None
+    a, b = row["best"]
+    return f"sunny from about {_about(a)} to {_about(b)}"
+
+
 def _short_travel(row: dict) -> str:
     travel = row["travel"]
     if " by train from " in travel:
@@ -754,7 +773,7 @@ def _short_travel(row: dict) -> str:
 
 def _short_place(row: dict) -> str:
     bits = ["where you are" if row["km"] < 1 else f"{row['km']:.0f} km, {_short_travel(row)}",
-            f"{_hours(row['sun_hours'])} of sun"]
+            _sunny_span(row) or f"{_hours(row['sun_hours'])} of sun"]
     if row["temp"] is not None:
         bits.append(f"{round(row['temp']):.0f}°C")
     return f"{row['name']} ({', '.join(bits)})"

@@ -29,7 +29,7 @@ app:
   id: hack.app_8f6e_5
   name: Nearest Sunshine
   # Three numbers. Bump it after a version has been submitted for review.
-  version: 0.1.0
+  version: 0.1.1
   # Never the word "by" here: the badge is parsed from
   # "[via <name> <version> by <author name>]" and splits on the first "by".
   summary: >-
@@ -97,16 +97,16 @@ outcomes:
       - name: window
         type: string
         description: >-
-          The daylight hours looked at, in words and UK clock times, for
-          example "this afternoon (12:00–16:02)". Empty when there is no
-          live weather.
+          The daylight hours looked at (not train times), for example
+          "this afternoon, daylight hours 12:00 to 16:02". Empty when there
+          is no live weather.
       - name: places
         type: array
         item_type: string
         description: >-
           Up to three nearest towns with sunshine, nearest first, each as
-          "Town: distance, travel time, hours of sun (best hours), top
-          temperature". Empty when none is sunny or there is no live weather.
+          "Town: distance, travel time, sunny from about HH:MM to HH:MM,
+          hours of sun in all, top temperature". Empty when none is sunny or there is no live weather.
       - name: sunny_places_found
         type: integer
         description: How many of the towns checked should get sunshine in the window.
