@@ -1,0 +1,1013 @@
+{
+  "about": "Day-trip destinations and extra start points for Nearest Sunshine, which finds sunny towns within reach of London. Coordinates are town centres; train_minutes is the typical fastest regular off-peak journey from the named London terminal, rounded to 5 minutes, approximate, from 2025-26 timetables.",
+  "towns": [
+    {
+      "name": "Brighton",
+      "aliases": [
+        "brighton and hove",
+        "hove"
+      ],
+      "county": "East Sussex",
+      "lat": 50.8225,
+      "lon": -0.1372,
+      "london_terminal": "London Victoria",
+      "train_minutes": 55,
+      "kind": "seaside"
+    },
+    {
+      "name": "Eastbourne",
+      "aliases": [],
+      "county": "East Sussex",
+      "lat": 50.7685,
+      "lon": 0.2815,
+      "london_terminal": "London Victoria",
+      "train_minutes": 90,
+      "kind": "seaside"
+    },
+    {
+      "name": "Hastings",
+      "aliases": [
+        "st leonards",
+        "st leonards-on-sea"
+      ],
+      "county": "East Sussex",
+      "lat": 50.8565,
+      "lon": 0.579,
+      "london_terminal": "London Charing Cross",
+      "train_minutes": 90,
+      "kind": "seaside"
+    },
+    {
+      "name": "Lewes",
+      "aliases": [],
+      "county": "East Sussex",
+      "lat": 50.8735,
+      "lon": 0.0088,
+      "london_terminal": "London Victoria",
+      "train_minutes": 65,
+      "kind": "historic"
+    },
+    {
+      "name": "Seaford",
+      "aliases": [],
+      "county": "East Sussex",
+      "lat": 50.7722,
+      "lon": 0.101,
+      "london_terminal": "London Victoria",
+      "train_minutes": 90,
+      "kind": "seaside"
+    },
+    {
+      "name": "Rye",
+      "aliases": [],
+      "county": "East Sussex",
+      "lat": 50.9505,
+      "lon": 0.733,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 70,
+      "kind": "historic"
+    },
+    {
+      "name": "Worthing",
+      "aliases": [],
+      "county": "West Sussex",
+      "lat": 50.813,
+      "lon": -0.3715,
+      "london_terminal": "London Victoria",
+      "train_minutes": 80,
+      "kind": "seaside"
+    },
+    {
+      "name": "Arundel",
+      "aliases": [],
+      "county": "West Sussex",
+      "lat": 50.8547,
+      "lon": -0.555,
+      "london_terminal": "London Victoria",
+      "train_minutes": 85,
+      "kind": "historic"
+    },
+    {
+      "name": "Chichester",
+      "aliases": [],
+      "county": "West Sussex",
+      "lat": 50.8365,
+      "lon": -0.7792,
+      "london_terminal": "London Victoria",
+      "train_minutes": 95,
+      "kind": "historic"
+    },
+    {
+      "name": "Canterbury",
+      "aliases": [
+        "canterbury west"
+      ],
+      "county": "Kent",
+      "lat": 51.28,
+      "lon": 1.079,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 55,
+      "kind": "historic"
+    },
+    {
+      "name": "Whitstable",
+      "aliases": [],
+      "county": "Kent",
+      "lat": 51.3597,
+      "lon": 1.0262,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 75,
+      "kind": "seaside"
+    },
+    {
+      "name": "Margate",
+      "aliases": [],
+      "county": "Kent",
+      "lat": 51.3876,
+      "lon": 1.3844,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 90,
+      "kind": "seaside"
+    },
+    {
+      "name": "Broadstairs",
+      "aliases": [],
+      "county": "Kent",
+      "lat": 51.3598,
+      "lon": 1.437,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 85,
+      "kind": "seaside"
+    },
+    {
+      "name": "Ramsgate",
+      "aliases": [],
+      "county": "Kent",
+      "lat": 51.3355,
+      "lon": 1.4165,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 75,
+      "kind": "seaside"
+    },
+    {
+      "name": "Deal",
+      "aliases": [],
+      "county": "Kent",
+      "lat": 51.2235,
+      "lon": 1.4005,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 80,
+      "kind": "seaside"
+    },
+    {
+      "name": "Dover",
+      "aliases": [
+        "dover priory"
+      ],
+      "county": "Kent",
+      "lat": 51.1265,
+      "lon": 1.3125,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 65,
+      "kind": "historic"
+    },
+    {
+      "name": "Folkestone",
+      "aliases": [
+        "folkestone central"
+      ],
+      "county": "Kent",
+      "lat": 51.081,
+      "lon": 1.1775,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 55,
+      "kind": "seaside"
+    },
+    {
+      "name": "Rochester",
+      "aliases": [],
+      "county": "Kent",
+      "lat": 51.3887,
+      "lon": 0.5045,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 35,
+      "kind": "historic"
+    },
+    {
+      "name": "Tunbridge Wells",
+      "aliases": [
+        "royal tunbridge wells"
+      ],
+      "county": "Kent",
+      "lat": 51.132,
+      "lon": 0.2635,
+      "london_terminal": "London Charing Cross",
+      "train_minutes": 55,
+      "kind": "historic"
+    },
+    {
+      "name": "Guildford",
+      "aliases": [],
+      "county": "Surrey",
+      "lat": 51.2362,
+      "lon": -0.5713,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 35,
+      "kind": "historic"
+    },
+    {
+      "name": "Dorking",
+      "aliases": [
+        "box hill"
+      ],
+      "county": "Surrey",
+      "lat": 51.2324,
+      "lon": -0.331,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 50,
+      "kind": "countryside"
+    },
+    {
+      "name": "Winchester",
+      "aliases": [],
+      "county": "Hampshire",
+      "lat": 51.0619,
+      "lon": -1.3138,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 60,
+      "kind": "historic"
+    },
+    {
+      "name": "Portsmouth",
+      "aliases": [
+        "southsea",
+        "portsmouth and southsea"
+      ],
+      "county": "Hampshire",
+      "lat": 50.799,
+      "lon": -1.0905,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 95,
+      "kind": "seaside"
+    },
+    {
+      "name": "Southampton",
+      "aliases": [
+        "southampton central"
+      ],
+      "county": "Hampshire",
+      "lat": 50.9045,
+      "lon": -1.4045,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 75,
+      "kind": "city"
+    },
+    {
+      "name": "Brockenhurst",
+      "aliases": [
+        "new forest"
+      ],
+      "county": "Hampshire",
+      "lat": 50.8166,
+      "lon": -1.574,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 90,
+      "kind": "countryside"
+    },
+    {
+      "name": "Bournemouth",
+      "aliases": [],
+      "county": "Dorset",
+      "lat": 50.7205,
+      "lon": -1.879,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 115,
+      "kind": "seaside"
+    },
+    {
+      "name": "Poole",
+      "aliases": [],
+      "county": "Dorset",
+      "lat": 50.716,
+      "lon": -1.9855,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 125,
+      "kind": "seaside"
+    },
+    {
+      "name": "Salisbury",
+      "aliases": [],
+      "county": "Wiltshire",
+      "lat": 51.0697,
+      "lon": -1.7955,
+      "london_terminal": "London Waterloo",
+      "train_minutes": 90,
+      "kind": "historic"
+    },
+    {
+      "name": "Windsor",
+      "aliases": [
+        "windsor and eton",
+        "eton"
+      ],
+      "county": "Berkshire",
+      "lat": 51.4823,
+      "lon": -0.6085,
+      "london_terminal": "London Paddington",
+      "train_minutes": 35,
+      "kind": "historic"
+    },
+    {
+      "name": "Reading",
+      "aliases": [],
+      "county": "Berkshire",
+      "lat": 51.455,
+      "lon": -0.973,
+      "london_terminal": "London Paddington",
+      "train_minutes": 25,
+      "kind": "city"
+    },
+    {
+      "name": "Henley-on-Thames",
+      "aliases": [
+        "henley",
+        "henley on thames"
+      ],
+      "county": "Oxfordshire",
+      "lat": 51.5378,
+      "lon": -0.903,
+      "london_terminal": "London Paddington",
+      "train_minutes": 55,
+      "kind": "historic"
+    },
+    {
+      "name": "Marlow",
+      "aliases": [],
+      "county": "Buckinghamshire",
+      "lat": 51.5705,
+      "lon": -0.776,
+      "london_terminal": "London Paddington",
+      "train_minutes": 60,
+      "kind": "countryside"
+    },
+    {
+      "name": "Oxford",
+      "aliases": [],
+      "county": "Oxfordshire",
+      "lat": 51.752,
+      "lon": -1.2578,
+      "london_terminal": "London Paddington",
+      "train_minutes": 55,
+      "kind": "city"
+    },
+    {
+      "name": "Bath",
+      "aliases": [
+        "bath spa"
+      ],
+      "county": "Somerset",
+      "lat": 51.3813,
+      "lon": -2.3592,
+      "london_terminal": "London Paddington",
+      "train_minutes": 85,
+      "kind": "historic"
+    },
+    {
+      "name": "Bristol",
+      "aliases": [
+        "bristol temple meads"
+      ],
+      "county": "Bristol",
+      "lat": 51.4545,
+      "lon": -2.5879,
+      "london_terminal": "London Paddington",
+      "train_minutes": 100,
+      "kind": "city"
+    },
+    {
+      "name": "Stroud",
+      "aliases": [],
+      "county": "Gloucestershire",
+      "lat": 51.7455,
+      "lon": -2.216,
+      "london_terminal": "London Paddington",
+      "train_minutes": 90,
+      "kind": "countryside"
+    },
+    {
+      "name": "Kemble",
+      "aliases": [],
+      "county": "Gloucestershire",
+      "lat": 51.6772,
+      "lon": -2.022,
+      "london_terminal": "London Paddington",
+      "train_minutes": 75,
+      "kind": "countryside"
+    },
+    {
+      "name": "Cheltenham",
+      "aliases": [
+        "cheltenham spa"
+      ],
+      "county": "Gloucestershire",
+      "lat": 51.8994,
+      "lon": -2.078,
+      "london_terminal": "London Paddington",
+      "train_minutes": 125,
+      "kind": "historic"
+    },
+    {
+      "name": "Moreton-in-Marsh",
+      "aliases": [
+        "moreton in marsh"
+      ],
+      "county": "Gloucestershire",
+      "lat": 51.9905,
+      "lon": -1.7025,
+      "london_terminal": "London Paddington",
+      "train_minutes": 90,
+      "kind": "countryside"
+    },
+    {
+      "name": "Stratford-upon-Avon",
+      "aliases": [
+        "stratford upon avon",
+        "stratford on avon"
+      ],
+      "county": "Warwickshire",
+      "lat": 52.1925,
+      "lon": -1.7075,
+      "london_terminal": "London Marylebone",
+      "train_minutes": 125,
+      "kind": "historic"
+    },
+    {
+      "name": "Warwick",
+      "aliases": [],
+      "county": "Warwickshire",
+      "lat": 52.282,
+      "lon": -1.5865,
+      "london_terminal": "London Marylebone",
+      "train_minutes": 90,
+      "kind": "historic"
+    },
+    {
+      "name": "Birmingham",
+      "aliases": [
+        "brum",
+        "birmingham new street"
+      ],
+      "county": "West Midlands",
+      "lat": 52.4797,
+      "lon": -1.9025,
+      "london_terminal": "London Euston",
+      "train_minutes": 85,
+      "kind": "city"
+    },
+    {
+      "name": "Wendover",
+      "aliases": [],
+      "county": "Buckinghamshire",
+      "lat": 51.762,
+      "lon": -0.741,
+      "london_terminal": "London Marylebone",
+      "train_minutes": 45,
+      "kind": "countryside"
+    },
+    {
+      "name": "St Albans",
+      "aliases": [
+        "st. albans",
+        "saint albans"
+      ],
+      "county": "Hertfordshire",
+      "lat": 51.7526,
+      "lon": -0.3395,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 20,
+      "kind": "historic"
+    },
+    {
+      "name": "Bedford",
+      "aliases": [],
+      "county": "Bedfordshire",
+      "lat": 52.136,
+      "lon": -0.4668,
+      "london_terminal": "London St Pancras International",
+      "train_minutes": 40,
+      "kind": "historic"
+    },
+    {
+      "name": "Cambridge",
+      "aliases": [],
+      "county": "Cambridgeshire",
+      "lat": 52.2056,
+      "lon": 0.1186,
+      "london_terminal": "London King's Cross",
+      "train_minutes": 50,
+      "kind": "city"
+    },
+    {
+      "name": "Ely",
+      "aliases": [],
+      "county": "Cambridgeshire",
+      "lat": 52.399,
+      "lon": 0.2625,
+      "london_terminal": "London King's Cross",
+      "train_minutes": 70,
+      "kind": "historic"
+    },
+    {
+      "name": "Stamford",
+      "aliases": [],
+      "county": "Lincolnshire",
+      "lat": 52.6525,
+      "lon": -0.48,
+      "london_terminal": "London King's Cross",
+      "train_minutes": 80,
+      "kind": "historic"
+    },
+    {
+      "name": "King's Lynn",
+      "aliases": [
+        "kings lynn"
+      ],
+      "county": "Norfolk",
+      "lat": 52.7535,
+      "lon": 0.397,
+      "london_terminal": "London King's Cross",
+      "train_minutes": 105,
+      "kind": "historic"
+    },
+    {
+      "name": "Saffron Walden",
+      "aliases": [
+        "audley end"
+      ],
+      "county": "Essex",
+      "lat": 52.0228,
+      "lon": 0.24,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 60,
+      "kind": "historic"
+    },
+    {
+      "name": "Bury St Edmunds",
+      "aliases": [
+        "bury st. edmunds",
+        "bury saint edmunds"
+      ],
+      "county": "Suffolk",
+      "lat": 52.2455,
+      "lon": 0.7125,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 105,
+      "kind": "historic"
+    },
+    {
+      "name": "Norwich",
+      "aliases": [],
+      "county": "Norfolk",
+      "lat": 52.6286,
+      "lon": 1.2924,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 110,
+      "kind": "city"
+    },
+    {
+      "name": "Colchester",
+      "aliases": [],
+      "county": "Essex",
+      "lat": 51.8893,
+      "lon": 0.903,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 50,
+      "kind": "historic"
+    },
+    {
+      "name": "Ipswich",
+      "aliases": [],
+      "county": "Suffolk",
+      "lat": 52.0568,
+      "lon": 1.1548,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 65,
+      "kind": "city"
+    },
+    {
+      "name": "Woodbridge",
+      "aliases": [],
+      "county": "Suffolk",
+      "lat": 52.0938,
+      "lon": 1.3185,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 90,
+      "kind": "historic"
+    },
+    {
+      "name": "Felixstowe",
+      "aliases": [],
+      "county": "Suffolk",
+      "lat": 51.963,
+      "lon": 1.35,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 95,
+      "kind": "seaside"
+    },
+    {
+      "name": "Harwich",
+      "aliases": [
+        "dovercourt"
+      ],
+      "county": "Essex",
+      "lat": 51.9435,
+      "lon": 1.286,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 85,
+      "kind": "historic"
+    },
+    {
+      "name": "Walton-on-the-Naze",
+      "aliases": [
+        "walton on the naze"
+      ],
+      "county": "Essex",
+      "lat": 51.847,
+      "lon": 1.2675,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 95,
+      "kind": "seaside"
+    },
+    {
+      "name": "Frinton-on-Sea",
+      "aliases": [
+        "frinton",
+        "frinton on sea"
+      ],
+      "county": "Essex",
+      "lat": 51.8335,
+      "lon": 1.2455,
+      "london_terminal": "London Liverpool Street",
+      "train_minutes": 90,
+      "kind": "seaside"
+    },
+    {
+      "name": "Southend-on-Sea",
+      "aliases": [
+        "southend",
+        "southend on sea"
+      ],
+      "county": "Essex",
+      "lat": 51.5385,
+      "lon": 0.7125,
+      "london_terminal": "London Fenchurch Street",
+      "train_minutes": 55,
+      "kind": "seaside"
+    }
+  ],
+  "origins": [
+    {
+      "name": "Croydon",
+      "aliases": [
+        "east croydon"
+      ],
+      "lat": 51.3762,
+      "lon": -0.0982,
+      "in_london": true
+    },
+    {
+      "name": "Stratford",
+      "aliases": [
+        "stratford city"
+      ],
+      "lat": 51.5416,
+      "lon": -0.0034,
+      "in_london": true
+    },
+    {
+      "name": "Wimbledon",
+      "aliases": [],
+      "lat": 51.4214,
+      "lon": -0.2064,
+      "in_london": true
+    },
+    {
+      "name": "Camden",
+      "aliases": [
+        "camden town"
+      ],
+      "lat": 51.539,
+      "lon": -0.1426,
+      "in_london": true
+    },
+    {
+      "name": "Greenwich",
+      "aliases": [],
+      "lat": 51.481,
+      "lon": -0.008,
+      "in_london": true
+    },
+    {
+      "name": "Hammersmith",
+      "aliases": [],
+      "lat": 51.4927,
+      "lon": -0.224,
+      "in_london": true
+    },
+    {
+      "name": "Islington",
+      "aliases": [
+        "angel"
+      ],
+      "lat": 51.5322,
+      "lon": -0.1058,
+      "in_london": true
+    },
+    {
+      "name": "Brixton",
+      "aliases": [],
+      "lat": 51.462,
+      "lon": -0.115,
+      "in_london": true
+    },
+    {
+      "name": "Clapham",
+      "aliases": [
+        "clapham common"
+      ],
+      "lat": 51.462,
+      "lon": -0.138,
+      "in_london": true
+    },
+    {
+      "name": "Richmond",
+      "aliases": [
+        "richmond upon thames"
+      ],
+      "lat": 51.4613,
+      "lon": -0.304,
+      "in_london": true
+    },
+    {
+      "name": "Ealing",
+      "aliases": [
+        "ealing broadway"
+      ],
+      "lat": 51.515,
+      "lon": -0.3017,
+      "in_london": true
+    },
+    {
+      "name": "Harrow",
+      "aliases": [
+        "harrow on the hill"
+      ],
+      "lat": 51.5793,
+      "lon": -0.3366,
+      "in_london": true
+    },
+    {
+      "name": "Bromley",
+      "aliases": [],
+      "lat": 51.4055,
+      "lon": 0.0145,
+      "in_london": true
+    },
+    {
+      "name": "Kingston upon Thames",
+      "aliases": [
+        "kingston"
+      ],
+      "lat": 51.4123,
+      "lon": -0.3007,
+      "in_london": true
+    },
+    {
+      "name": "Hackney",
+      "aliases": [
+        "hackney central"
+      ],
+      "lat": 51.547,
+      "lon": -0.056,
+      "in_london": true
+    },
+    {
+      "name": "Canary Wharf",
+      "aliases": [],
+      "lat": 51.5054,
+      "lon": -0.0235,
+      "in_london": true
+    },
+    {
+      "name": "Shoreditch",
+      "aliases": [],
+      "lat": 51.526,
+      "lon": -0.079,
+      "in_london": true
+    },
+    {
+      "name": "King's Cross",
+      "aliases": [
+        "kings cross",
+        "london king's cross",
+        "st pancras",
+        "london st pancras international"
+      ],
+      "lat": 51.5308,
+      "lon": -0.1238,
+      "in_london": true
+    },
+    {
+      "name": "Waterloo",
+      "aliases": [
+        "london waterloo"
+      ],
+      "lat": 51.5032,
+      "lon": -0.1123,
+      "in_london": true
+    },
+    {
+      "name": "Paddington",
+      "aliases": [
+        "london paddington"
+      ],
+      "lat": 51.5154,
+      "lon": -0.1755,
+      "in_london": true
+    },
+    {
+      "name": "Victoria",
+      "aliases": [
+        "london victoria"
+      ],
+      "lat": 51.4952,
+      "lon": -0.1441,
+      "in_london": true
+    },
+    {
+      "name": "Liverpool Street",
+      "aliases": [
+        "london liverpool street"
+      ],
+      "lat": 51.5178,
+      "lon": -0.0823,
+      "in_london": true
+    },
+    {
+      "name": "Euston",
+      "aliases": [
+        "london euston"
+      ],
+      "lat": 51.5282,
+      "lon": -0.1337,
+      "in_london": true
+    },
+    {
+      "name": "London Bridge",
+      "aliases": [],
+      "lat": 51.505,
+      "lon": -0.0865,
+      "in_london": true
+    },
+    {
+      "name": "Marylebone",
+      "aliases": [
+        "london marylebone"
+      ],
+      "lat": 51.5225,
+      "lon": -0.1631,
+      "in_london": true
+    },
+    {
+      "name": "Charing Cross",
+      "aliases": [
+        "london charing cross"
+      ],
+      "lat": 51.508,
+      "lon": -0.1247,
+      "in_london": true
+    },
+    {
+      "name": "Westminster",
+      "aliases": [],
+      "lat": 51.4995,
+      "lon": -0.1248,
+      "in_london": true
+    },
+    {
+      "name": "Walthamstow",
+      "aliases": [
+        "walthamstow central"
+      ],
+      "lat": 51.583,
+      "lon": -0.02,
+      "in_london": true
+    },
+    {
+      "name": "Lewisham",
+      "aliases": [],
+      "lat": 51.4657,
+      "lon": -0.0142,
+      "in_london": true
+    },
+    {
+      "name": "Heathrow",
+      "aliases": [
+        "heathrow airport",
+        "lhr"
+      ],
+      "lat": 51.47,
+      "lon": -0.4543,
+      "in_london": true
+    },
+    {
+      "name": "Watford",
+      "aliases": [
+        "watford junction"
+      ],
+      "lat": 51.656,
+      "lon": -0.3955,
+      "in_london": false
+    },
+    {
+      "name": "Slough",
+      "aliases": [],
+      "lat": 51.51,
+      "lon": -0.593,
+      "in_london": false
+    },
+    {
+      "name": "Luton",
+      "aliases": [],
+      "lat": 51.879,
+      "lon": -0.417,
+      "in_london": false
+    },
+    {
+      "name": "Stevenage",
+      "aliases": [],
+      "lat": 51.9016,
+      "lon": -0.2026,
+      "in_london": false
+    },
+    {
+      "name": "Milton Keynes",
+      "aliases": [
+        "mk",
+        "central milton keynes"
+      ],
+      "lat": 52.041,
+      "lon": -0.759,
+      "in_london": false
+    },
+    {
+      "name": "Chelmsford",
+      "aliases": [],
+      "lat": 51.7345,
+      "lon": 0.472,
+      "in_london": false
+    },
+    {
+      "name": "Basingstoke",
+      "aliases": [],
+      "lat": 51.2655,
+      "lon": -1.088,
+      "in_london": false
+    },
+    {
+      "name": "Woking",
+      "aliases": [],
+      "lat": 51.319,
+      "lon": -0.559,
+      "in_london": false
+    },
+    {
+      "name": "Crawley",
+      "aliases": [],
+      "lat": 51.1133,
+      "lon": -0.1865,
+      "in_london": false
+    },
+    {
+      "name": "Harlow",
+      "aliases": [],
+      "lat": 51.7695,
+      "lon": 0.0905,
+      "in_london": false
+    },
+    {
+      "name": "High Wycombe",
+      "aliases": [],
+      "lat": 51.629,
+      "lon": -0.749,
+      "in_london": false
+    },
+    {
+      "name": "Bracknell",
+      "aliases": [],
+      "lat": 51.416,
+      "lon": -0.75,
+      "in_london": false
+    }
+  ]
+}
